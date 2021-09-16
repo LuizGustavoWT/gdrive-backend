@@ -7,18 +7,22 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
-import { UsersService } from 'src/users/domain/services/users.service';
+import { CreateUserService } from 'src/users/domain/services/createUser.service';
+import { UsersService } from '../../domain/services/users.service';
 
 import { CreateUserDto } from '../dto/create-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
 
 @Controller('users')
 export class UsersController {
-  constructor(private readonly usersService: UsersService) {}
+  constructor(
+    private readonly usersService: UsersService,
+    private readonly createUserService: CreateUserService,
+  ) {}
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
-    return this.usersService.create(createUserDto);
+    return this.createUserService.execute(createUserDto);
   }
 
   @Get()

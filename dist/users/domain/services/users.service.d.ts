@@ -17,9 +17,13 @@ export declare class UsersService {
     update(id: number, updateUserDto: UpdateUserDto): {
         message: string;
         user: {
-            username?: string;
+            id: string;
+            name?: string;
             password?: string;
-            id: number;
+            username?: string;
+            createdAt?: Date;
+            updatedAt?: Date;
+            deletedAt?: Date;
         };
     };
     remove(id: number): {

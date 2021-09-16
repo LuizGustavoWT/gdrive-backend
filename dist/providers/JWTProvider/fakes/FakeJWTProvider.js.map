@@ -1,0 +1,1 @@
+{"version":3,"file":"FakeJWTProvider.js","sourceRoot":"","sources":["../../../../src/providers/JWTProvider/fakes/FakeJWTProvider.ts"],"names":[],"mappings":";;;AAEA,MAAa,eAAe;IACnB,KAAK,CAAC,IAAI,CAAC,EAAU;QAC1B,OAAO,EAAE,CAAC;IACZ,CAAC;IAEM,KAAK,CAAC,MAAM,CAAC,KAAa;QAC/B,OAAO,KAAK,CAAC;IACf,CAAC;CACF;AARD,0CAQC"}

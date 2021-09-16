@@ -1,13 +1,12 @@
-import { UsersService } from 'src/users/domain/services/users.service';
+import { CreateUserService } from 'src/users/domain/services/createUser.service';
+import { UsersService } from '../../domain/services/users.service';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
 export declare class UsersController {
     private readonly usersService;
-    constructor(usersService: UsersService);
-    create(createUserDto: CreateUserDto): {
-        message: string;
-        user: CreateUserDto;
-    };
+    private readonly createUserService;
+    constructor(usersService: UsersService, createUserService: CreateUserService);
+    create(createUserDto: CreateUserDto): Promise<import(".prisma/client").User>;
     findAll(): {
         users: {
             id: number;
@@ -20,9 +19,13 @@ export declare class UsersController {
     update(id: string, updateUserDto: UpdateUserDto): {
         message: string;
         user: {
-            username?: string;
+            id: string;
+            name?: string;
             password?: string;
-            id: number;
+            username?: string;
+            createdAt?: Date;
+            updatedAt?: Date;
+            deletedAt?: Date;
         };
     };
     remove(id: string): {
